@@ -1,0 +1,166 @@
+@charset "utf-8";
+/*初始设置*/
+			* {
+				margin: 0;
+				padding: 0;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				font-family: "微软雅黑";
+			}
+			
+			html {
+				overflow: hidden;
+			}
+			
+			body {
+				overflow: hidden;
+				font-size: 100%;
+			}
+			/*总体背景设置*/
+			/*左侧图片开始*/
+			.daohang {
+				top: 10vh;
+				bottom: 10vh;
+				text-align: center;
+				background: rgba(0, 0, 0, 0.5);
+				position: fixed;
+				z-index: 100;
+				height: 80xh;
+				left: 0;
+				width: 20%;
+				font-weight: 300;
+				font-size: 1rem;
+			}
+			.daohang img{
+				max-width: 100%;
+				min-width: 100%;
+				max-height:100%;
+				min-height: 100%;
+				overflow: hidden;
+				float: left;
+			}
+			/*左侧图片结束*/
+			/*右侧自我介绍部分开始*/
+			/*外框设计*/
+			.slides {
+				width: 500vw;
+				height: 100vh;	
+			}
+			
+			.slides .slide {
+				height: 100vh;
+				width: 100vw;
+				float: left;
+				text-align: center;
+				background-size: cover;
+			}
+			
+			.slides .slide .content {
+				overflow-y: scroll;
+				position: relative;
+				width: 70%;
+				height: 80%;
+				left: 30%;
+				top: 10%;
+				bottom: 10%;
+				background: rgba(0, 0, 0, 0.5);
+			}
+			/*h2标题*/
+			.first-content h2 {
+				font-size: 36px;
+				font-weight: 700;
+				color: #fff;
+				letter-spacing: 0.5px;
+				border-bottom: 2px solid #FFF;
+				display: inline-block;
+				padding-bottom: 10px;
+				margin-bottom: 20px;
+				margin-top: 0px;
+			}
+			/*文字*/
+			.first-content p {
+				font-size: 13px;
+				color: #fff;
+				letter-spacing: 0.5px;
+				font-weight: 300;
+				line-height: 24px;
+				margin-bottom: 30px;
+				text-indent: 2px;
+			}
+			.content::-webkit-scrollbar {
+				width: 5px;
+				height: 8px;
+				/*背景颜色透明度*/
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			/*自我介绍右侧图片*/
+			.right-image{
+				border-radius: 50%;
+				transition: all 1s;
+			}
+			/*背景图片开始*/
+			
+			.content::-webkit-scrollbar-thumb {
+				background-image: rgba(250, 250, 250, 0);
+			}
+			
+			.slides .slide:nth-child(1) {
+				background-image:url(../img/bg.jpg);
+			}
+			/*自我介绍页面开始*/
+			.first-content .container-fluid {
+				padding-right: 50px;
+				padding-left: 50px;
+			}
+			
+			.first-content .container-fluid .col-md-6 {
+				padding-right: 50px;
+				padding-left: 50px;
+			}
+			/*滚动动画，CSS3技术*/
+			@-webkit-keyframes donghua{
+				/*小球平移起始位置*/
+				0% {
+					left: 0;
+				}
+				100% {
+					/*小球平移终点位置*/
+					left:800px;
+					/*小球旋转1080度*/
+					transform: rotate(1080deg);
+				}
+			}
+		
+			@-webkit-keyframes donghua2{
+				0%{
+					left: 600px;
+				}
+				100%{
+					left: 0;
+					transform: rotate(-1080deg);
+				}
+			}
+			/*鼠标悬停，鼠标放到图片上，图片旋转*/
+			.right-image:hover {
+				/*默认按照Z轴旋转*/
+				transform: rotateY(360deg);
+			}
+			/*滚动小球的设计*/
+			#div1 {
+				width: 100px;
+				height: 100px;
+				background:   rgba(0, 0, 0, 0.3);
+				border-radius: 50%;
+				position: absolute;
+				left: 0px;
+				top: 80%;
+				text-align: center;
+				line-height: 100px;
+				/*动画调用,动画执行时间*/
+				-webkit-animation: donghua 1s forwards,donghua2 1s 2s forwards;
+				
+			}
+			/*点击小球超链接，字体变色，变成白色*/
+			#div1 :active{
+				color: white;
+			}
